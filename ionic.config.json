@@ -1,0 +1,7 @@
+{
+  "name": "vidfog",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

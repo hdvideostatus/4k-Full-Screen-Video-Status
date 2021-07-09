@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "2184656967",
+    "project_id": "k-full-screen-video-status",
+    "storage_bucket": "k-full-screen-video-status.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:2184656967:android:11fee943cec622fbb09962",
+        "android_client_info": {
+          "package_name": "com.fullscreenvideostatus.hdvideostatus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "2184656967-0vdrdj18b9oo3ccnoqoui46ck8eucgts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj7BUq1CkAKP7zbNpBpx7Q4jm2I6KgoDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "2184656967-0vdrdj18b9oo3ccnoqoui46ck8eucgts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

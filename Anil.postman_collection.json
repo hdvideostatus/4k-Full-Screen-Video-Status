@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "49f6bc5f-a9cd-4023-a8ee-087ca508a4a4",
+		"name": "Anil",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "4kfullscreenvideostatus",
+			"item": [
+				{
+					"name": "getLanguageList", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{4klive}}videoapi/getLanguageList",
+							"host": [
+								"{{4klive}}videoapi"
+							],
+							"path": [
+								"getLanguageList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHomePageVideoList", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"language_id\":\"1,2\",\r\n    \"start\":\"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{4klive}}videoapi/getHomePageVideoList",
+							"host": [
+								"{{4klive}}videoapi"
+							],
+							"path": [
+								"getHomePageVideoList"
+							]
+						},
+						"description": "- language id like 1,2,3\r\n- start must be multiplay by 10 like 0,10,20,30, ect... pagination will be 10\r\n"
+					},
+					"response": []
+				},
+				{
+					"name": "getCategoryList", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"language_id\":\"3\",\r\n    \"start\":\"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{4klive}}videoapi/getCategoryList",
+							"host": [
+								"{{4klive}}videoapi"
+							],
+							"path": [
+								"getCategoryList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getVideoListByCategory", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category_id\":\"1\",\r\n    \"language_id\":\"3\",\r\n    \"start\":\"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{4klocal}}videoapi/getVideoListByCategory",
+							"host": [
+								"{{4klocal}}videoapi"
+							],
+							"path": [
+								"getVideoListByCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUserProfile", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_name\":\"\",\r\n    \"device_token\":\"123465\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{4klocal}}videoapi/createUserProfile",
+							"host": [
+								"{{4klocal}}videoapi"
+							],
+							"path": [
+								"createUserProfile"
+							]
+						},
+						"description": "-user_name optional"
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserProfile", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "device_token",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "user_name",
+									"value": "4K Lovers World",
+									"type": "text"
+								},
+								{
+									"key": "user_profile",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "user_profile_old",
+									"value": "https://4kvideostatus.sgp1.digitaloceanspaces.com/4kfullscreenvideostatus/user_profile/balam-pichkaristill.webp",
+									"description": "All ready exists link other wise blank",
+									"type": "text"
+								},
+								{
+									"key": "user_instagram",
+									"value": "https://instagram.com",
+									"type": "text"
+								},
+								{
+									"key": "user_telegram",
+									"value": "https://t.me/sssss",
+									"type": "text"
+								},
+								{
+									"key": "user_youtube",
+									"value": "https://youtube.com",
+									"type": "text"
+								},
+								{
+									"key": "user_email",
+									"value": "ss@gmail.com",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{4klocal}}videoapi/updateUserProfile",
+							"host": [
+								"{{4klocal}}videoapi"
+							],
+							"path": [
+								"updateUserProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMyVideos", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":\"1\",\r\n    \"start\":\"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{4klocal}}videoapi/getMyVideos",
+							"host": [
+								"{{4klocal}}videoapi"
+							],
+							"path": [
+								"getMyVideos"
+							]
+						},
+						"description": "start : 0,20,40,60,80,....."
+					},
+					"response": []
+				},
+				{
+					"name": "reportVideo", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":\"1\",\r\n    \"video_id\":\"2\",\r\n    \"report_reason\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{4klocal}}videoapi/reportVideo",
+							"host": [
+								"{{4klocal}}videoapi"
+							],
+							"path": [
+								"reportVideo"
+							]
+						},
+						"description": "report_reason : \r\n1=sexual,\r\n2=copyright,\r\n3=other"
+					},
+					"response": []
+				},
+				{
+					"name": "uploadVideo", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "video_file",
+									"type": "file",
+									"src": "/E:/Backups/swag/video/Newfolder24/8750.mp4"
+								},
+								{
+									"key": "user_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "language_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{4klive}}/videoapi/uploadVideo",
+							"host": [
+								"{{4klive}}"
+							],
+							"path": [
+								"videoapi",
+								"uploadVideo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "increateCount", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"video_id\":\"53\",\r\n    \"type\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{4klive}}videoapi/increateCount",
+							"host": [
+								"{{4klive}}videoapi"
+							],
+							"path": [
+								"increateCount"
+							]
+						},
+						"description": "type : 1=download,2=share,3=fav"
+					},
+					"response": []
+				},
+				{
+					"name": "getTrendingVideos", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"language_id\":\"2\",\r\n    \"start\":\"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{4klocal}}videoapi/getTrendingVideos",
+							"host": [
+								"{{4klocal}}videoapi"
+							],
+							"path": [
+								"getTrendingVideos"
+							]
+						},
+						"description": "Start : 0,10,20,30,40...."
+					},
+					"response": []
+				},
+				{
+					"name": "getAppDetail", // Done
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{4klocal}}videoapi/getAppDetail",
+							"host": [
+								"{{4klocal}}videoapi"
+							],
+							"path": [
+								"getAppDetail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
