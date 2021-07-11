@@ -23,7 +23,7 @@ export class DownloadPage implements OnInit {
 
   ionViewWillEnter() {
     this.myImages = [];
-    // this.readImageFromFolder(this.file.externalRootDirectory, '4k Video Status');
+    // this.readImageFromFolder(this.file.externalRootDirectory, '4k Video Status/Videos/');
   }
 
   goVideoSlides() {

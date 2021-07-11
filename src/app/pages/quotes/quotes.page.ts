@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { ApiService } from 'src/app/services/api.service';
 import { GlobalService } from 'src/app/services/global.service';
 
@@ -18,6 +19,7 @@ export class QuotesPage implements OnInit {
     public router: Router,
     public gs: GlobalService,
     public api: ApiService,
+    public alertController: AlertController,
   ) {
     // this.getCetegory();
   }
@@ -123,6 +125,51 @@ export class QuotesPage implements OnInit {
     } else {
       return true
     }
+  }
+
+  async languagePopup() {
+    const setCatLang = () => {
+      for (let i in this.allVideoLangTemp) {
+        this.allVideoLangTemp[i] = {
+          type: 'checkbox',
+          label: this.allQuotesLanguage[i].language_name,
+          value: this.allQuotesLanguage[i].language_id,
+          checked: this.isLangCheck(this.allQuotesLanguage[i].language_id)
+        }
+      }
+    }
+    await setCatLang();
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Languages',
+      inputs: this.allVideoLangTemp,
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Ok',
+          handler: (res) => {
+            this.selectedLang = res;
+            console.log(res);
+            if (res.length) {
+              window.localStorage.setItem("selectedLanguages", JSON.stringify(res));
+              // this.getHomeVideos({
+              //   language_id: String(res),
+              //   start: 0
+              // });
+              console.log('Confirm Ok');
+            }
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 
   // loadData(event) {

@@ -73,8 +73,10 @@ export class AppComponent {
       //   });
       this.file.createDir(this.file.externalRootDirectory, '4k Video Status', true)
         .then((result) => {
-          this.file.createDir(this.file.externalRootDirectory, '4k Video Status/Quotes', true).then((result) => {
+          this.file.createDir(this.file.externalRootDirectory, '4k Video Status/Videos', true).then((result) => {
+          }).catch((err) => { });
 
+          this.file.createDir(this.file.externalRootDirectory, '4k Video Status/Quotes', true).then((result) => {
           }).catch((err) => { });
         })
         .catch((err) => { });

@@ -159,7 +159,7 @@ export class VideoSlidesPage implements OnInit {
     const fileTransfer: FileTransferObject = this.fileTransfer.create();
     const fileTransferDir = this.file.externalRootDirectory;
     console.log("fileTransferDir<<<<<<<<<>>>>" + JSON.stringify(fileTransferDir));
-    const fileURL = fileTransferDir + '4k Video Status/' + fileName;
+    const fileURL = fileTransferDir + '4k Video Status/Videos/' + fileName;
     fileTransfer.download(vidRow.video_url, fileURL).then((entry) => {
       this.downloadspinner = false;
       vidRow.video_download = Number(vidRow.video_download) + 1;
